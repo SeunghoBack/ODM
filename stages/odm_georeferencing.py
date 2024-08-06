@@ -106,7 +106,7 @@ class ODMGeoreferencingStage(types.ODM_Stage):
 
                 with open(gcp_geojson_export_file, 'w') as f:
                     f.write(json.dumps(geojson, indent=4))
-                
+
                 with zipfile.ZipFile(gcp_geojson_zip_export_file, 'w', compression=zipfile.ZIP_LZMA) as f:
                     f.write(gcp_geojson_export_file, arcname=os.path.basename(gcp_geojson_export_file))
 
